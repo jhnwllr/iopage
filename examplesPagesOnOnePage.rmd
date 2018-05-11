@@ -1,0 +1,95 @@
+
+
+---
+title: "Dataset Usage"
+author: "John Waller"
+date: "May 4, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+# Files = Files[Files %in% list.files("C:/Users/ftw712/Desktop/usageReport/data/filter_data/filterData/")]
+
+File = Files[11]
+# File = "18c93d12-34fb-4d3f-903c-b77215a1dcc9.rda"
+# load data 
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+## `r Title`
+## https://www.gbif.org/dataset/`r Key`
+
+## How many downloads through time?  
+
+Here I plot the total downloads and then group by month to make the plot smoother. 
+
+```{r,echo=FALSE, warning=FALSE, message=FALSE,}
+# When were most downloads happening? 
+source("C:/Users/ftw712/Desktop/usageReport/R/whenSearchesHappened.r")
+whenSearchHappened(dataset)
+```
+
+## Top 10 Taxon Searches
+
+What taxon_key was used during the occurrence download? 
+
+Here I grouped by rank. This graph was in fact **very expensive** to compute because I had to look up the rank for each taxon key before it could be grouped. Might be best used only in **annual reporting** even though it is informative. 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+source("C:/Users/ftw712/Desktop/usageReport/R/taxonSearchCountsPlot.r")
+taxonSearchCountPlots(top10,File,Title)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# rankChoices = c("SPECIES","GENUS","FAMILY","ORDER","CLASS","KINGDOM")
+source("C:/Users/ftw712/Desktop/usageReport/R/getImageLinks.r")
+linksGenus = getImageLinks(top10,"GENUS")
+linksSpecies = getImageLinks(top10,"SPECIES")
+```
+
+## Images
+
+Images for the top 10 searched taxon keys for species and genus. 
+
+### Top 10 Images for species 
+```{r,out.width='10%', echo=FALSE}
+knitr::include_graphics(linksSpecies)
+```
+
+### Top 10 Images for genus 
+```{r,out.width='10%', echo=FALSE}
+knitr::include_graphics(linksGenus)
+```
+
+## Top search filter used when dataset was hit
+
+This graph is almost always **very similar between datasets**. See: http://rpubs.com/JohnWaller/387693
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+
+## Top searched country for dataset 
+This is the **country that was searched** not the country that the search was coming from. 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+source("C:/Users/ftw712/Desktop/usageReport/R/countryPlot.r")
+topSearchedCountries(filterData)
+```
+
+
+
+
+
+
+

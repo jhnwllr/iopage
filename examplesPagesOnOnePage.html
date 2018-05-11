@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="John Waller" />
+
+
+<title>Dataset Usage</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<script src="site_libs/proj4js-2.3.15/proj4.js"></script>
+<link href="site_libs/highcharts-5.0.6/css/motion.css" rel="stylesheet" />
+<script src="site_libs/highcharts-5.0.6/highstock.js"></script>
+<script src="site_libs/highcharts-5.0.6/highcharts-3d.js"></script>
+<script src="site_libs/highcharts-5.0.6/highcharts-more.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/annotations.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/broken-axis.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/data.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/drilldown.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/exporting.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/funnel.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/heatmap.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/map.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/no-data-to-display.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/offline-exporting.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/solid-gauge.js"></script>
+<script src="site_libs/highcharts-5.0.6/modules/treemap.js"></script>
+<script src="site_libs/highcharts-5.0.6/plugins/annotations.js"></script>
+<script src="site_libs/highcharts-5.0.6/plugins/draggable-legend.js"></script>
+<script src="site_libs/highcharts-5.0.6/plugins/draggable-points.js"></script>
+<script src="site_libs/highcharts-5.0.6/plugins/export-csv.js"></script>
+<script src="site_libs/highcharts-5.0.6/plugins/grouped-categories.js"></script>
+<script src="site_libs/highcharts-5.0.6/plugins/motion.js"></script>
+<script src="site_libs/highcharts-5.0.6/plugins/pattern-fill-v2.js"></script>
+<script src="site_libs/highcharts-5.0.6/plugins/tooltip-delay.js"></script>
+<script src="site_libs/highcharts-5.0.6/custom/reset.js"></script>
+<script src="site_libs/highcharts-5.0.6/custom/symbols-extra.js"></script>
+<script src="site_libs/highcharts-5.0.6/custom/text-symbols.js"></script>
+<link href="site_libs/fontawesome-4.5.0/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/htmlwdgtgrid-1/htmlwdgtgrid.css" rel="stylesheet" />
+<script src="site_libs/highchart-binding-0.5.0/highchart.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="gitHubIssue.html">issue</a>
+</li>
+<li>
+  <a href="examplesPagesOnOnePage.html">Example</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dataset Usage</h1>
+<h4 class="author"><em>John Waller</em></h4>
+<h4 class="date"><em>May 4, 2018</em></h4>
+
+</div>
+
+
+<div id="birdlife-australia-birdata" class="section level2">
+<h2>BirdLife Australia, Birdata</h2>
+</div>
+<div id="httpswww.gbif.orgdataset4bf1cca8-832c-4891-9e17-7e7a65b7cc81" class="section level2">
+<h2><a href="https://www.gbif.org/dataset/4bf1cca8-832c-4891-9e17-7e7a65b7cc81" class="uri">https://www.gbif.org/dataset/4bf1cca8-832c-4891-9e17-7e7a65b7cc81</a></h2>
+</div>
+<div id="how-many-downloads-through-time" class="section level2">
+<h2>How many downloads through time?</h2>
+<p>Here I plot the total downloads and then group by month to make the plot smoother.</p>
+<div id="htmlwidget-525ff6a33a595f7023dd" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-525ff6a33a595f7023dd">{"x":{"hc_opts":{"title":{"text":"Number of dataset downloads"},"yAxis":{"title":{"text":null}},"credits":{"enabled":false},"exporting":{"enabled":false},"plotOptions":{"series":{"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"},"bubble":{"minSize":5,"maxSize":25}},"annotationsOptions":{"enabledButtons":false},"tooltip":{"delayForDisplay":10},"subtitle":{"text":"downloads grouped by month"},"series":[{"data":[[1379203200000,1],[1381795200000,88],[1384473600000,96],[1387065600000,49],[1389744000000,39],[1392422400000,63],[1394841600000,62],[1397520000000,56],[1400112000000,43],[1402790400000,43],[1405382400000,65],[1408060800000,29],[1410739200000,36],[1413331200000,86],[1416009600000,70],[1418601600000,69],[1421280000000,46],[1423958400000,64],[1426377600000,179],[1429056000000,114],[1431648000000,76],[1434326400000,72],[1436918400000,68],[1439596800000,44],[1442275200000,74],[1444867200000,80],[1447545600000,95],[1450137600000,39],[1452816000000,53],[1455494400000,140],[1458000000000,63],[1460678400000,99],[1463270400000,53],[1465948800000,64],[1468540800000,74],[1471219200000,46],[1473897600000,82],[1476489600000,133],[1479168000000,62],[1481760000000,68],[1484438400000,97],[1487116800000,62],[1489536000000,123],[1492214400000,79],[1505433600000,222],[1508025600000,310],[1510704000000,232],[1513296000000,143],[1515974400000,224],[1518652800000,225],[1521072000000,262],[1523750400000,185]],"id":"xts"}]},"theme":{"chart":{"backgroundColor":"transparent"}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"stock","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="top-10-taxon-searches" class="section level2">
+<h2>Top 10 Taxon Searches</h2>
+<p>What taxon_key was used during the occurrence download?</p>
+<p>Here I grouped by rank. This graph was in fact <strong>very expensive</strong> to compute because I had to look up the rank for each taxon key before it could be grouped. Might be best used only in <strong>annual reporting</strong> even though it is informative.</p>
+<p><img src="examplesPagesOnOnePage_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="images" class="section level2">
+<h2>Images</h2>
+<p>Images for the top 10 searched taxon keys for species and genus.</p>
+<div id="top-10-images-for-species" class="section level3">
+<h3>Top 10 Images for species</h3>
+<p><img src="https://static.inaturalist.org/photos/12669164/original.jpg?1514849621" width="10%" /><img src="https://static.inaturalist.org/photos/13139641/original.jpg?1517012261" width="10%" /><img src="https://static.inaturalist.org/photos/12695588/original.jpg?1514982324" width="10%" /><img src="https://static.inaturalist.org/photos/12694001/original.jpeg?1514965702" width="10%" /><img src="https://static.inaturalist.org/photos/13161315/original.jpeg?1517106778" width="10%" /><img src="https://static.inaturalist.org/photos/12789742/original.jpeg?1515447435" width="10%" /><img src="https://static.inaturalist.org/photos/12805094/original.jpeg?1515526772" width="10%" /></p>
+</div>
+<div id="top-10-images-for-genus" class="section level3">
+<h3>Top 10 Images for genus</h3>
+<p><img src="https://static.inaturalist.org/photos/13148090/original.jpeg?1517062143" width="10%" /><img src="https://static.inaturalist.org/photos/12716717/original.jpg?1515100548" width="10%" /><img src="https://static.inaturalist.org/photos/13159446/original.jpeg?1517101671" width="10%" /><img src="https://static.inaturalist.org/photos/9565767/original.jpeg?1502024133" width="10%" /><img src="https://static.inaturalist.org/photos/13469244/original.jpg?1518447690" width="10%" /><img src="https://static.inaturalist.org/photos/13170102/original.jpg?1517153261" width="10%" /><img src="https://static.inaturalist.org/photos/13183769/original.png?1517192671" width="10%" /><img src="https://static.inaturalist.org/photos/12682325/original.jpeg?1514919835" width="10%" /><img src="https://static.inaturalist.org/photos/12677632/original.jpeg?1514888044" width="10%" /><img src="https://static.inaturalist.org/photos/12784726/original.jpg?1515424595" width="10%" /></p>
+</div>
+</div>
+<div id="top-search-filter-used-when-dataset-was-hit" class="section level2">
+<h2>Top search filter used when dataset was hit</h2>
+<p>This graph is almost always <strong>very similar between datasets</strong>. See: <a href="http://rpubs.com/JohnWaller/387693" class="uri">http://rpubs.com/JohnWaller/387693</a></p>
+<p><img src="examplesPagesOnOnePage_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="top-searched-country-for-dataset" class="section level2">
+<h2>Top searched country for dataset</h2>
+<p>This is the <strong>country that was searched</strong> not the country that the search was coming from.</p>
+<p><img src="examplesPagesOnOnePage_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

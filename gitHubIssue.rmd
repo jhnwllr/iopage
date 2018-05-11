@@ -1,0 +1,57 @@
+
+
+# Dataset Activity Tabs
+
+It has been discussed that the activity tabs could provide more information to users and dataset publishers. https://github.com/gbif/portal16/issues/563
+https://github.com/gbif/portal16/issues/138#issuecomment-325769662
+
+After exploring the dowload activity for some random datasets. I have prepared some rough example pages and some suggestions. 
+
+### Example Dataset Pages
+
+* AntWeb 
+* CSIRO Ichthyology provider for OZCAM
+* 
+
+## Previous Suggestions 
+
+* Number of downloads by **time**
+* Number of downloads per **user**
+* Number of downloads per **filter**
+* Number of downloads per **taxon key**
+* Number of downloads per **country**
+
+## Reccomendations 
+
+### Worth doing and easy
+
+* Number of downloads by **time**
+* Number of downloads per **user**
+* Number of downloads per **country**
+
+These metrics are easy to get and informative. 
+
+### Worth doing and probably hard
+
+* Number of downloads per **taxon key**
+
+These metrics are harder to get because it requires one to get the **rank** of a **taxon key**. For each dataset I had to look up 1000s of taxon keys in order to produce the graphs in the example pages, since each taxon key **must first be grouped to a rank level** to be informative. 
+
+Also, I think including taxon images is probably easy and gives an instant visual feedback about what has been searched for in a dataset.
+
+### Probably not worth doing 
+
+* Number of downloads per **filter**
+
+The top downloads per filters for each dataset are almost always the same. http://rpubs.com/JohnWaller/387693
+
+
+
+
+
+
+ 
+ 
+
+
+

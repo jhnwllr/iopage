@@ -1,0 +1,13 @@
+name: "my-website"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "issue"
+      href: gitHubIssue.html
+    - text: "Example"
+      href: examplesPagesOnOnePage.html
+output_dir: "."      
