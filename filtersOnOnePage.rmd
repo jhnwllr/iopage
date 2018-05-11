@@ -1,0 +1,187 @@
+---
+title: "Top filters used are almost always the same"
+author: "John Waller"
+date: "May 9, 2018"
+output: html_document
+---
+
+Here I plot the top filter used for 10 random datasets. The top search filter is almost always **TAXON_KEY**, **HAS_COORDINATE**, **HAS_GEOSPATIAL_ISSUE**, or **COUNTRY**. 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[1]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+## Search filter used when dataset was hit
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[2]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[3]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[4]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[5]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[6]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[7]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[8]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[9]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# get downloaded datasets 
+Files = list.files("C:/Users/ftw712/Desktop/usageReport/data/datasets/") # load datasets
+
+File = Files[10]
+source("C:/Users/ftw712/Desktop/usageReport/R/loadData.r")
+loadData(File)
+```
+
+* `r Title`
+* https://www.gbif.org/dataset/`r Key`
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7,fig.width=7}
+source("C:/Users/ftw712/Desktop/usageReport/R/plotFilters.r")
+plotFilters(filterData)
+```
+
+
